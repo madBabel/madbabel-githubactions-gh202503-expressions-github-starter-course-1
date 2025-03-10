@@ -8,9 +8,9 @@ Consolidar conocimientos sobre expresiones, variables de entorno y funciones en 
 
 ## Tareas
 
-1. **Crear un archivo de flujo de trabajo** llamado `08-expressions.yaml` en la carpeta `.github/workflows` en la raíz del repositorio. El flujo debe cumplir con las siguientes características:
+1. **Crear un archivo de flujo de trabajo** llamado `expressions.yaml` en la carpeta `.github/workflows` en la raíz del repositorio. El flujo debe cumplir con las siguientes características:
    
-   * **Nombre:** 08 Expressions
+   * **Nombre:**  Expressions
    * **Desencadenantes:** 
     - `pull request`
     - `workflow_dispatch`. 
@@ -93,24 +93,20 @@ Consolidar conocimientos sobre expresiones, variables de entorno y funciones en 
      * **Step 4:** _"Failing Step"_
        * Ejecutarse solo si la entrada `inputs.fail` es `true`.
        * Salir con un código distinto de cero.
-     * **Step 5:** _"Conditional Step - Success"_
-       
+     * **Step 5:** _"Conditional Step - Success"_       
        * Ejecutarse solo si los pasos anteriores tienen éxito.
        * Imprimir: `"All previous steps succeeded."`
-     * **Step 6:** _"Conditional Step - Failure"_
-       
+     * **Step 6:** _"Conditional Step - Failure"_       
        * Ejecutarse si algún paso anterior falló.
        * Imprimir: `"A previous step failed."`
-     * **Step 7:** _"Print Always"_
-       
+     * **Step 7:** _"Print Always"_       
        * Ejecutarse siempre que el flujo no sea cancelado.
        * Imprimir: `"This step runs unless the workflow is cancelled."`
-     * **Step 8:** _"On Cancel"_
-       
+     * **Step 8:** _"On Cancel"_       
        * Ejecutarse solo si el flujo ha sido cancelado.
        * Imprimir: `"Workflow cancelled."`
-3. **Confirmar y probar** el flujo de trabajo:
-   
+         
+3. **Confirmar y probar** el flujo de trabajo:   
    * Ejecutar el flujo desde la interfaz de usuario con diferentes valores rama,  `debug` y `fail` Observando resultados.
    * Realizar pruebas con pull requests:
      1. Crear una nueva rama y modificar cualquier archivo, por ejemplo, `README.md`.
@@ -176,7 +172,7 @@ Consolidar conocimientos sobre expresiones, variables de entorno y funciones en 
 
 * Usa operadores condicionales para simplificar configuraciones:
   * Valor por defecto: `${{ expresión || valor_predeterminado }}`
-  * Condicional tipo ternario: `${{ condición && valor_si_true || valor_si_false }}`
+  * Condicional tipo ternario: `${{ condición && valor_si_true || valor_si_false }}` (Similar a condicion "condicion?valortrue:valorfalse) de java)
 
 ---
 
