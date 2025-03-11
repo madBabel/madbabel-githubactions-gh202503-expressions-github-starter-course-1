@@ -88,20 +88,24 @@ Consolidar conocimientos sobre expresiones, variables de entorno y funciones en 
        * Ejecutarse solo si el flujo no ha sido cancelado y el título de la PR contiene `"fix"`.
        * Imprimir: `"This PR fixes a bug."`
      * **Step 3:** _"Sleep and Cancel"_
-       
        * Ejecutar `sleep 20` para permitir la cancelación manual del workflow.
+         
      * **Step 4:** _"Failing Step"_
        * Ejecutarse solo si la entrada `inputs.fail` es `true`.
-       * Salir con un código distinto de cero.
+       * Salir (comando exit) con un código distinto de cero.
+         
      * **Step 5:** _"Conditional Step - Success"_       
        * Ejecutarse solo si los pasos anteriores tienen éxito.
        * Imprimir: `"All previous steps succeeded."`
+         
      * **Step 6:** _"Conditional Step - Failure"_       
        * Ejecutarse si algún paso anterior falló.
        * Imprimir: `"A previous step failed."`
+         
      * **Step 7:** _"Print Always"_       
        * Ejecutarse siempre que el flujo no sea cancelado.
        * Imprimir: `"This step runs unless the workflow is cancelled."`
+         
      * **Step 8:** _"On Cancel"_       
        * Ejecutarse solo si el flujo ha sido cancelado.
        * Imprimir: `"Workflow cancelled."`
