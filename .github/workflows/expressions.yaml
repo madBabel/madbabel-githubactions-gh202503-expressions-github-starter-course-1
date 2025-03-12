@@ -33,6 +33,7 @@ jobs:
                 echo "Branch: ${{ github.ref }}" 
                 echo "Commit SHA: ${{ github.sha }}" 
                 echo "Runner OS: ${{ runner.os }}"
+                echo "La variable de organizacion es ${{vars.ORG_VAR}}"
 
             - name: Triggered from Main
               if: inputs.debug && github.ref_name=='main'
