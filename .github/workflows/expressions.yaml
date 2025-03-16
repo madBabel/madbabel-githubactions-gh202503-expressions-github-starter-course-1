@@ -50,7 +50,7 @@ jobs:
             
             - name: Overwrite and Print
               env:
-                ${{ env.OVERWRITTEN }}: Overwritten at step level
+                OVERWRITTEN: Overwritten at step level
               run: |
                 echo Overwritten var: $OVERWRITTEN
                 
