@@ -53,6 +53,18 @@ jobs:
                 OVERWRITTEN: Overwritten at step level
               run: |
                 echo Overwritten var: $OVERWRITTEN
+
+    functions-pr-data:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print PR Info
+              if: github.event.pull_request
+              run: |
+                echo ${{ github.event.pull_request.title }}
+                echo ${{ toJson(github.event.pull_request.labels)}}
+
+
+            
                 
                 
                 
