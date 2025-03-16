@@ -33,12 +33,21 @@ jobs:
                 echo "Branch: ${{ github.ref }}" 
                 echo "Commit SHA: ${{ github.sha }}" 
                 echo "Runner OS: ${{ runner.os }}"
-                echo "La variable de organizacion es ${{vars.ORG_VAR}}"
 
             - name: Triggered from Main
               if: inputs.debug && github.ref_name=='main'
               run: 
                 echo "Triggered from main branch!"
+
+            - name: Print Variables
+              env:
+                STEP_VAR: Step-level variable
+              run: |
+                    echo Step var: ${{ env.STEP_VAR }}
+                    echo Job var: ${{ env.JOB_VAR }} 
+                    echo Workflow var: ${{ env.WORKFLOW_VAR }} 
+                    echo Overwritten: ${{ env.OVERWRITTEN }}
+                
                 
                 
     
