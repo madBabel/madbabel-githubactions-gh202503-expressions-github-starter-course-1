@@ -89,7 +89,7 @@ jobs:
               run: echo This step runs unless the workflow is cancelled.
 
             - name: On Cancel
-              if: ${{ !cancelled()}}
+              if: ${{ cancelled()}}
               run: Workflow cancelled.
 
 
