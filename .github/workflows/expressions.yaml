@@ -67,7 +67,31 @@ jobs:
               if: ${{ !cancelled()}} && contains(github.event.pull_request.title, 'fix')
               run: echo This PR fixes a bug.
 
+            - name: Sleep and Cancel
+              run: |
+                echo Espera de 20 segundos para cancelar
+                sleep 20
             
+            - name: Failing Step
+              if: inputs.fail
+              run: exit 1
+
+            - name: Conditional Step - Success
+              if: success()
+              run: echo ALl previous steps succeeded
+            
+            - name: Conditional Step - Failure
+              if: failure()
+              run: echo A previous step failed.
+
+            - name: Print Always
+              if: ${{ !cancelled()}} 
+              run: echo This step runs unless the workflow is cancelled.
+
+            - name: On Cancel
+              if: ${{ !cancelled()}}
+              run: Workflow cancelled.
+
 
                 
 
