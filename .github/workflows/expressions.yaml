@@ -47,6 +47,12 @@ jobs:
                     echo Job var: ${{ env.JOB_VAR }} 
                     echo Workflow var: ${{ env.WORKFLOW_VAR }} 
                     echo Overwritten: ${{ env.OVERWRITTEN }}
+            
+            - name: Overwrite and Print
+              env:
+                Overwritten: Overwritten at step level
+              run: |
+                echo Overwritten var: $OVERWRITTEN
                 
                 
                 
