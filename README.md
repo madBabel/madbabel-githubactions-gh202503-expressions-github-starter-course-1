@@ -73,7 +73,8 @@ Consolidar conocimientos sobre expresiones, variables de entorno y funciones en 
      * **Step 1:** _"Print PR Info"_
        * Ejecutarse solo si el evento es `pull_request`.
        * Imprimir el título de la PR y las etiquetas de la PR en formato JSON utilizando `toJSON`.
-     
+    
+    
      ```yaml
      steps:
        - name: Print PR labels
